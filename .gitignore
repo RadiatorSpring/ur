@@ -1,0 +1,11 @@
+# Go build artefacts
+**/pkg
+**/src
+**/bin
+
+# Python
+**/__pycache__
+
+# Job artefacts
+**/gen
+**/.DS_Store
