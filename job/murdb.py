@@ -37,8 +37,8 @@ class MurDBLifecycle(Lifecycle):
 
         time.sleep(7)
 
-        schema_path = self._schema_path()
-
+        games_schema_path = self._games_schema_path()
+        users_schema_path = self._users_schema_path()
 
         murdb_env[PGPASSWORD] = os.getenv(POSTGRES_PASSWORD)
         username = os.getenv("POSTGRES_USER")
@@ -46,12 +46,17 @@ class MurDBLifecycle(Lifecycle):
 
         db_up_cmd=["psql", '-h', 'localhost', "-U", username, "-f", db_up_path] 
         
-        schema_up_cmd = ['psql', '-h', 'localhost',  '-d', 'murabi', '-U', username,  '-f', schema_path]
+        games_up_cmd = ['psql', '-h', 'localhost',  '-d', 'murabi', '-U', username,  '-f', games_schema_path]
+
+        users_up_cmd = ['psql', '-h', 'localhost',  '-d', 'murabi', '-U', username,  '-f', users_schema_path]
 
         p = subprocess.Popen(db_up_cmd, env=murdb_env)
         p.wait()
 
-        p = subprocess.Popen(schema_up_cmd, env=murdb_env)
+        p = subprocess.Popen(games_up_cmd, env=murdb_env)
+        p.wait()
+
+        p = subprocess.Popen(users_up_cmd, env=murdb_env)
         p.wait()
         
         logging.info('Done')
@@ -66,10 +71,14 @@ class MurDBLifecycle(Lifecycle):
     def _name(self) -> Path:
         return JOB_NAME
 
-    def _schema_path(self) -> Path:
+    def _games_schema_path(self) -> Path:
         code_dir = os.getenv(Environment.CODE_DIR.value)
-        return Path(code_dir, 'murabi', 'db', 'schema_up.sql')
+        return Path(code_dir, 'murabi', 'db', 'games_up.sql')
 
     def _db_up_path(self)->Path:
         code_dir = os.getenv(Environment.CODE_DIR.value)
         return Path(code_dir, 'murabi', 'db', 'db_up.sql')
+
+    def _users_schema_path(self) -> Path:
+        code_dir = os.getenv(Environment.CODE_DIR.value)
+        return Path(code_dir, 'murabi', 'db', 'users_up.sql')
