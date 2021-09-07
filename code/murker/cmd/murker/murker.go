@@ -9,9 +9,9 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 
-	apiV1 "github.com/messiah-of-ur/murker/api/v1"
-	"github.com/messiah-of-ur/murker/mur"
-	"github.com/messiah-of-ur/murker/murabi"
+	apiV1 "github.com/RadiatorSpring/ur/murker/api/v1"
+	"github.com/RadiatorSpring/ur/murker/mur"
+	"github.com/RadiatorSpring/ur/murker/murabi"
 )
 
 const MurkerPort = "MURKER_PORT"

@@ -1,4 +1,4 @@
-module github.com/messiah-of-ur/murker
+module github.com/RadiatorSpring/ur/murker
 
 go 1.15
 

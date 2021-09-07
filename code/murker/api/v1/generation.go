@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/RadiatorSpring/ur/murker/mur"
+	"github.com/RadiatorSpring/ur/murker/murabi"
 	"github.com/gin-gonic/gin"
-	"github.com/messiah-of-ur/murker/mur"
-	"github.com/messiah-of-ur/murker/murabi"
 )
 
 type PlayerAuth struct {

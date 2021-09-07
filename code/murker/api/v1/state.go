@@ -3,8 +3,8 @@ package v1
 import (
 	"net/http"
 
+	"github.com/RadiatorSpring/ur/murker/mur"
 	"github.com/gin-gonic/gin"
-	"github.com/messiah-of-ur/murker/mur"
 )
 
 func stateHandler(runner mur.GameRunner) func(*gin.Context) {

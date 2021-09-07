@@ -1,9 +1,9 @@
 package v1
 
 import (
+	"github.com/RadiatorSpring/ur/murker/mur"
+	"github.com/RadiatorSpring/ur/murker/murabi"
 	"github.com/gin-gonic/gin"
-	"github.com/messiah-of-ur/murker/mur"
-	"github.com/messiah-of-ur/murker/murabi"
 )
 
 func RegisterHandlers(router *gin.Engine, runner mur.GameRunner, registry RoomRegistry, murabiClient *murabi.MurabiClient) {
