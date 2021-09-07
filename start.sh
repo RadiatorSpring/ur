@@ -1,9 +1,10 @@
 #!/bin/bash
-
+set -eux pipefail
 source .envrc
 pipenv install
 cd ~/coding/ur/code/murabi
-mvn clean install
+    mvn clean install
+    docker build -t radiatorspring/murabi .
 cd ../..
 
 docker stop $(docker ps -a -q)

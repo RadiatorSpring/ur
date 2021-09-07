@@ -9,7 +9,7 @@ from job.murker import MurkerLifecycle
 
 JOB_NAME='murabi'
 
-DOCKER_IMAGE="radiatorspring/murabi:latest"
+DOCKER_IMAGE="radiatorspring/murabi"
 
 HOST='host.docker.internal'
 ADDRESS_SPLITTER=","
