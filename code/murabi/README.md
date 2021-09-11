@@ -34,7 +34,7 @@ psql -h localhost  -d murabi -U murabi -f schema/up.sql
 export MURKER_ADDRESSES="host.docker.internal:9000,host.docker.internal:9001"
 
 # Start the server locally
-docker run -e MURKER_ADDRESSES -e DB_HOST -e DB_PORT -e DB_USER -e DB_PASS -e DB_NAME -it --rm -p 8080:8080  angler98/murabi:latest
+docker run -e MURKER_ADDRESSES -e DB_HOST -e DB_PORT -e DB_USER -e DB_PASS -e DB_NAME -it --rm -p 8080:8080  radiatorspring/murabi:latest
 ```
 
 :warning: Note -> You'll also need some murkers to play through with it.
